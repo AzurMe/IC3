@@ -1,9 +1,9 @@
-set_property PACKAGE_PIN M14 [get_ports {led_r}]
-set_property IOSTANDARD LVCMOS33 [get_ports {led_r}]
+set_property PACKAGE_PIN M14 [get_ports {led_g}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_g}]
 set_property PACKAGE_PIN M15 [get_ports {led_y}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led_y}]
-set_property PACKAGE_PIN K16 [get_ports {led_g}]
-set_property IOSTANDARD LVCMOS33 [get_ports {led_g}]
+set_property PACKAGE_PIN K16 [get_ports {led_r}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_r}]
 
 set_property PACKAGE_PIN F16 [get_ports {seg_out[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {seg_out[0]}]
