@@ -64,16 +64,25 @@ module time_setter (
                 if (set_p) next_state = STATE_SET_HH;
                 
             STATE_SET_HH:
-                if (set_p)      { next_state = STATE_RUN; set_load = 1'b1; }
-                else if (sel_p) { next_state = STATE_SET_MM; }
+                if (set_p)begin
+                    next_state = STATE_RUN; 
+                    set_load = 1'b1; 
+                end 
+                else if (sel_p) next_state = STATE_SET_MM;
                 
             STATE_SET_MM:
-                if (set_p)      { next_state = STATE_RUN; set_load = 1'b1; }
-                else if (sel_p) { next_state = STATE_SET_SS; }
+                if (set_p) begin
+                    next_state = STATE_RUN; 
+                    set_load = 1'b1; 
+                end
+                else if (sel_p) next_state = STATE_SET_SS;
                 
             STATE_SET_SS:
-                if (set_p)      { next_state = STATE_RUN; set_load = 1'b1; }
-                else if (sel_p) { next_state = STATE_SET_HH; }
+                if (set_p) begin
+                    next_state = STATE_RUN; 
+                    set_load = 1'b1; 
+                end
+                else if (sel_p) next_state = STATE_SET_HH;
                 
             default:
                 next_state = STATE_RUN;
