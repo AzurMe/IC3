@@ -46,7 +46,7 @@ module display_mux (
                 an_out = 8'b11111101;
             end
             3'h2:    begin
-                {dp, digit_data} = {1'b1, mm[3:0]}; // MM_lo + ":"
+                {dp, digit_data} = {1'b0, mm[3:0]}; // MM_lo + ":"
                 an_out = 8'b11111011;
             end
             3'h3:    begin
@@ -54,7 +54,7 @@ module display_mux (
                 an_out = 8'b11110111;
             end
             3'h4:    begin
-                {dp, digit_data} = {1'b1, hh[3:0]}; // HH_lo + ":"
+                {dp, digit_data} = {1'b0, hh[3:0]}; // HH_lo + ":"
                 an_out = 8'b11101111;
             end
             3'h5:    begin
@@ -90,7 +90,7 @@ module display_mux (
     // 4. 输出
     // {dp, g, f, e, d, c, b, a}
     // 假设你的板子 dp 是 seg[7]
-    assign seg_out = (digit_off) ? 8'h00 : {dp, seg_data};
+    assign seg_out = (digit_off) ? 8'hFF : {dp, seg_data};
     
     // 位选，低电平有效
 
