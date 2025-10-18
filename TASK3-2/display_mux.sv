@@ -75,22 +75,22 @@ module display_mux (
     );
 
     // 3. 闪烁逻辑
-    always_comb begin
-        digit_off = 1'b0;
-        if (blink_en) begin // 只有在闪烁信号为高时才判断
-            case (blink_sel)
-                2'b00: if (sel == 3'h4 || sel == 3'h5) digit_off = 1'b1; // 闪烁 HH
-                2'b01: if (sel == 3'h2 || sel == 3'h3) digit_off = 1'b1; // 闪烁 MM
-                2'b10: if (sel == 3'h0 || sel == 3'h1) digit_off = 1'b1; // 闪烁 SS
-                default: digit_off = 1'b0;
-            endcase
-        end
-    end
+    // always_comb begin
+    //     digit_off = 1'b0;
+    //     if (blink_en) begin // 只有在闪烁信号为高时才判断
+    //         case (blink_sel)
+    //             2'b00: if (sel == 3'h4 || sel == 3'h5) digit_off = 1'b1; // 闪烁 HH
+    //             2'b01: if (sel == 3'h2 || sel == 3'h3) digit_off = 1'b1; // 闪烁 MM
+    //             2'b10: if (sel == 3'h0 || sel == 3'h1) digit_off = 1'b1; // 闪烁 SS
+    //             default: digit_off = 1'b0;
+    //         endcase
+    //     end
+    // end
 
     // 4. 输出
     // {dp, g, f, e, d, c, b, a}
     // 假设你的板子 dp 是 seg[7]
-    assign seg_out = (digit_off) ? 8'hFF : {dp, seg_data};
+    assign seg_out =  {dp, seg_data};
     
     // 位选，低电平有效
 
