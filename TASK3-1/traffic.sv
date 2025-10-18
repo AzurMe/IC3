@@ -33,7 +33,7 @@ module traffic_light_controller #(
     output logic led_y,
     output logic led_g,
     output logic [7:0] seg_out, // {dp, g, f, e, d, c, b, a} <-- 修改点1：扩展到8位
-    output logic [1:0] seg_sel  // {十位, 个位}
+    output logic [7:0] seg_sel  
 );
 
     //==========================================================================
