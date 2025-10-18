@@ -39,31 +39,31 @@ module display_mux (
         case (sel)
             3'h0:    begin 
                 digit_data = ss[3:0];  // SS_lo
-                an_out = 8'b11111110;
+                an_out = 8'b00000001;
             end
             3'h1:    begin
                 digit_data = ss[7:4];  // SS_hi
-                an_out = 8'b11111101;
+                an_out = 8'b00000010;
             end
             3'h2:    begin
                 {dp, digit_data} = {1'b0, mm[3:0]}; // MM_lo + ":"
-                an_out = 8'b11111011;
+                an_out = 8'b00000100;
             end
             3'h3:    begin
                 digit_data = mm[7:4];  // MM_hi
-                an_out = 8'b11110111;
+                an_out = 8'b00001000;
             end
             3'h4:    begin
                 {dp, digit_data} = {1'b0, hh[3:0]}; // HH_lo + ":"
-                an_out = 8'b11101111;
+                an_out = 8'b00010000;
             end
             3'h5:    begin
                 digit_data = hh[7:4];  // HH_hi
-                an_out = 8'b11011111;
+                an_out = 8'b00100000;
             end
             default: begin
                 digit_data = 4'h0;     // 默认显示 0
-                an_out = 8'b11111111;      // 熄灭所有位
+                an_out = 8'b00000000;      // 熄灭所有位
             end
         endcase
     end
