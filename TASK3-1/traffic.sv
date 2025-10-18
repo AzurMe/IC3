@@ -137,14 +137,14 @@ module traffic_light_controller #(
     //==========================================================================
     always_comb begin
         // 默认所有灯都关闭
-        led_r = 1'b0;
-        led_y = 1'b0;
-        led_g = 1'b0;
+        led_r = 1'b1;
+        led_y = 1'b1;
+        led_g = 1'b1;
 
         case (current_state)
-            S_GREEN:  led_g = 1'b1;
+            S_GREEN:  led_g = 1'b0;
             S_YELLOW: led_y = blink_on; // 黄灯由闪烁信号控制
-            S_RED:    led_r = 1'b1;
+            S_RED:    led_r = 1'b0;
         endcase
     end
 
