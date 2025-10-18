@@ -24,9 +24,9 @@ module clock_counter (
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            r_hh <= 8'h00;
-            r_mm <= 8'h00;
-            r_ss <= 8'h00;
+            r_hh <= 8'd16;
+            r_mm <= 8'd25;
+            r_ss <= 8'd00;
         end 
         // 模式 1: 加载设置时间
         else if (set_load) begin
