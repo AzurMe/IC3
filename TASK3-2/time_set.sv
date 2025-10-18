@@ -92,9 +92,9 @@ module time_setter (
     // 设置寄存器 (用于存储正在设置的时间)
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            r_set_hh <= 8'h00;
-            r_set_mm <= 8'h00;
-            r_set_ss <= 8'h00;
+            r_set_hh <= 8'd16;
+            r_set_mm <= 8'd12;
+            r_set_ss <= 8'd00;
         end else begin
             if (state == STATE_RUN && next_state == STATE_SET_HH) begin
                 // 刚进入设置模式，加载当前时间
