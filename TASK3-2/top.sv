@@ -93,9 +93,9 @@ module top_digital_clock (
     time_setter u_setter (
         .clk      (clk_50mhz),
         .rst_n    (rst_n),
-        .set_p    (set_p),
-        .sel_p    (sel_p),
-        .inc_p    (inc_p),
+        .set_p    (~btn_set_n),
+        .sel_p    (~btn_sel_n),
+        .inc_p    (~btn_inc_n),
         .cur_hh   (cur_hh),
         .cur_mm   (cur_mm),
         .cur_ss   (cur_ss),
