@@ -11,7 +11,7 @@ module debouncer (
 );
 
     // 20ms 消抖时间 @ 50MHz
-    localparam DEBOUNCE_MAX = 50_000_000 / 1000 * 20; // 1_000_000
+    localparam DEBOUNCE_MAX =  1000; // 1_000_000
     
     logic [$clog2(DEBOUNCE_MAX):0] cnt;
     logic btn_sync1, btn_sync2;
