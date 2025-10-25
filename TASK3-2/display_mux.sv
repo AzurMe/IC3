@@ -90,7 +90,7 @@ module display_mux (
     // 4. 输出
     // {dp, g, f, e, d, c, b, a}
     // 假设你的板子 dp 是 seg[7]
-    assign seg_out =  digit_off ? 8'b0 : {dp, seg_data};
+    assign seg_out =  digit_off ? 8'b1 : {dp, seg_data};
     
     // 位选，低电平有效
 
