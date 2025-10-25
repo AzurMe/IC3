@@ -7,13 +7,13 @@ module debouncer (
     input       rst_n,
     input       btn_in,
     output reg  btn_out,
-    output      btn_pulse,
+    output      btn_pulse
 );
 
-parameter N = 20 ;           // debounce timer bitwidth (Need Calculation)
-parameter FREQ = 50;         //model clock :Mhz
-parameter MAX_TIME = 20;     //ms
-localparam TIMER_MAX_VAL =   MAX_TIME * 1000 * FREQ;
+    parameter N = 20 ;           // debounce timer bitwidth (Need Calculation)
+    parameter FREQ = 50;         //model clock :Mhz
+    parameter MAX_TIME = 20;     //ms
+    localparam TIMER_MAX_VAL =   MAX_TIME * 1000 * FREQ;
 
     reg Q1, Q2;
     always @(posedge clk or negedge rst_n) begin
